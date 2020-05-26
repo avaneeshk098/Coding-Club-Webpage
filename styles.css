@@ -1,0 +1,183 @@
+/*  Class Names:
+	jumbotron: the image on which title and subtitle is present;
+	logo: the text "Coding Club" in the Nav Bar;
+	nav-links: the unordered list of links in the Nav Bar;
+	nav-links li: each list item in nav-links;
+	nav-links a: each link in nav-links;
+	burger: the container div for the burger symbol;
+	burger div: each small div in burger or basically each line in the burger icon;
+	nav-links a:hover: the link over which the cursor is currently being hovered; 
+	nav-links.active: updates the webpage once the user clicks the burger button;
+	navbar-main.active: updates the arrangement of the logo and the burger button to adjust with the menu opened. */
+
+
+/* Importing Raleway and Open Sans fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Raleway:wght@100;400;700;900&display=swap');
+
+/* Setting global properties to avoid any margin or padding */
+*{
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* CSS for the image */
+
+.jumbotron {
+  width: 100%;
+  height: 100vH;
+  background-image: url("/home/avaneeshk098/CodingClubWebpage/Home/src/img/markus-spiske-qjnAnF0jIGk-unsplash.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* CSS for the Title */
+h2{
+	font-family: "Raleway", sans-serif;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: white;
+	letter-spacing: 2px;
+	font-size: 8rem;
+}
+
+/* CSS for the subtitle */
+
+h3{
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+	color: white;
+	letter-spacing: 2px;
+	font-size: 4rem;
+}
+
+/* CSS for Desktop Navigation Bar */
+nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 8vh;
+	background-color: rgb(10, 10, 10);
+	font-family: 'Raleway', sans-serif;
+}
+
+/* CSS for the Logo */
+
+.logo{
+	color: rgb(226, 226, 226);
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 20px;
+}
+
+/* CSS for the list of links in the Desktop Navigation Bar */
+.nav-links{
+	display: flex;
+	justify-content: space-around;
+	width: 40%;
+}
+
+/* CSS for each list item in the Desktop Navigation Bar */
+.nav-links li{
+	list-style: none;
+}
+
+/* CSS for each link in the Desktop Navigation Bar */
+.nav-links a{
+	text-decoration: none;
+	color: white;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 3px;
+}
+
+/* CSS for the burger button */
+.burger div{
+	width: 25px;
+	height: 3px;
+	background-color: white;
+	margin: 5px;
+}
+
+.burger{
+	display: none;
+}
+
+/* CSS for change due to hover in Desktop Navigation Bar */
+.nav-links li:hover {
+  		background-color: #555;
+  		color: white;
+	}
+
+/* CSS for responsive design of the webpage on phones and tablets */
+@media screen and (max-width: 1024px){
+	.nav-links{
+		width: 60%;
+	}
+}
+
+@media screen and (max-width: 768px){
+
+	.burger{
+		display: block;
+		cursor: pointer;
+		margin-right: auto;
+	}
+
+	.logo{
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+
+	nav{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.navbar-main{
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.nav-links{
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		margin-top: 3%;
+		margin-bottom: 3%;
+		width: 100%;
+	}
+
+	.nav-links li{
+		padding: 1% 1% 1% 1%;
+		text-align: center;
+	}
+
+	.nav-links a{
+		display: block;
+		font-size: 1.25rem;
+		align-items: center;
+	}
+
+	.nav-links li:hover {
+  		background-color: #555;
+  		color: white;
+	}
+
+	/* It is the class used by JS to identify the click of the burger button */
+	.nav-links.active{
+		display: flex;
+	}
+
+	/* It is made to make small frontend chages post-clicking of the burger button */
+	.navbar-main.active{
+		margin-top: 3%;
+	}
+}
+
