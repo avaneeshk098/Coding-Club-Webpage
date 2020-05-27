@@ -41,7 +41,7 @@ body{
 
 /* CSS for each section of the webage */
 section{
-	height: 100vH;
+	height: auto;
 	width: 100%;
 	padding-top: 2%;
 	padding-bottom: 2%;
@@ -158,6 +158,10 @@ nav{
 	flex-direction: row;
 }
 
+#resources{
+	background-color: #e0e0e0;
+}
+
 .about-title{
 	color: rgb(50, 50, 50);
 	font-family: "Raleway", sans-serif;
@@ -189,19 +193,42 @@ nav{
 	align-items: center;
 }
 
-#div-1{
+.div-1{
 	margin-top: 2%;
 	margin-bottom: 10%;
+	animation: move-left 10s ease 1;
 }
 
-.about-img{
-	width:30%;
-	height: auto;
+.div-2{
+	animation: move-right 10s ease 1;
+}
+
+.container-resource{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin-top: 5%;
+	margin-left: 5%;
+	margin-right: 5%;
 	margin-bottom: 5%;
-	padding : 3% 3% 3% 3%;
-	border-radius: 25%;
-	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 3%, rgba(227,218,218,1) 76%);
+	animation: move-left 10s ease 1;
+}
+
+.resource-img{
+	width:20%;
+	height: auto;
+}
+
+.resource-body{
+	color: rgb(50, 50, 50);
+	font-family: "Raleway", sans-serif;
+	font-weight: 400;
+	letter-spacing: 1px;
+	font-size: 1.5rem;
+	text-align: justify;
+	width: 50%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
 }
 /* CSS for responsive design of the webpage on phones and tablets */
 @media screen and (max-width: 1024px){
@@ -216,14 +243,14 @@ nav{
 	#subtitle{
 		font-size: 2rem;
 	}
-	#div-1{
+	.div-1{
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
 	}
 
-	#div-2{
+	.div-2{
 		justify-content: center;
 		align-items: center;
 		display: flex;
@@ -234,18 +261,32 @@ nav{
 	.container-item{
 		margin-top: 5%;
 	}
+
+	.container-resource{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.resource-body{
+		font-size: 1rem;
+		text-align: center;
+		margin-top: 3%;
+		margin-bottom: 3%;
+	}
 }
 
 @media screen and (max-width: 768px){
 
-	#div-1{
+	.div-1{
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
 	}
 
-	#div-2{
+	.div-2{
 		justify-content: center;
 		align-items: center;
 		display: flex;
@@ -323,6 +364,12 @@ nav{
 	.navbar-main.active{
 		margin-top: 3%;
 	}
+
+	.container-resource{
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 }
 
 /* Animation for fading in of jumbotron */
@@ -338,5 +385,20 @@ nav{
 	}
 }
 
+@keyframes move-left{
+	0%{
+		transform: translateX(-50%);
+	}
+	100%{
+		transform: translateX(0%);
+	}
+}
 
-@keyframes 
+@keyframes move-right{
+	0%{
+		transform: translateX(50%);
+	}
+	100%{
+		transform: translateX(0%);
+	}
+}
